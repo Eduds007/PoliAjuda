@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1> LogIn </h1>
+
+    <form action="{% url 'login'%}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <p> {{form.username.label}} {{form.username}}</p>
+        <p> {{form.password.label}} {{form.password}}</p>
+
+        <div class="d-grid gap-2">
+            <input type="submit" value="enviar">
+        </div>
+
+    </form>
+
+
+
+
+{% endblock content %}

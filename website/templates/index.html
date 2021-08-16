@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="jumbotron jumbotron-fluid" style="justify-content: flex-start;">
+        <h1 class="display-4" style="font-weight: bold;"> PoliAjuda </h1>
+        <p class="lead" style="font-weight: 400;"> Para ajudar você na resolução do exercícios da PoliUSP. <br> Chega de caçar resolução em milhares de sites. Aqui você encontra tudo !! e de GRAÇA !!</p>
+
+    </div>
+
+    {% if documents %}
+        <ul class="list-group list group-horizontal-md">
+            <li class="list-group-item active">
+                <a>Postagens recentes</a>
+            </li>
+
+
+            
+            {% for document in documents  %}
+
+            
+
+            {% if forloop.counter0 < 6 %}
+            <li class="list-group-item "><a href="{{document.docfile.url}}"> {{ document.name}} </a></li>
+            {% endif %}
+
+            
+                
+                
+            {% endfor %}
+
+
+        </ul>
+
+    {% else %}
+
+        <p>Sem documentos </p>
+
+    {% endif %}
+
+
+    {% if materias %}
+        <div class="card-group" style="margin-top: 5rem;">
+
+            {% for materia in materias %}
+
+            <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                    <h5 class="card-title" style="padding: 1rem;">{{materia}}</h5>
+                    
+                    <a href="/{{materia}}" class="btn btn-primary" style="margin-bottom: 1rem;">Acessar Matéria</a>
+                    </div>
+              </div>
+              
+              {% if forloop.counter|divisibleby:3 %}
+
+              <div class="w-100"></div>
+                
+              {% endif %}
+
+            {% endfor %}
+      
+        </div>
+
+    {% endif %}
+  
+{% endblock content %}

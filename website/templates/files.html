@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="{% url 'upload' %}" method="POST" class="form-control form-control-lg" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{message}}
+
+        <p> {{form.non_field_erros}} </p>
+
+        <p> {{form.docfile.label.tag}} {{form.docfile.help_text}}</p>
+
+        <h2> Nome do arquivo</h2>
+        <p>
+            {{form.docfile.errors}}
+            {{form.name}}    
+        </p>
+
+        <h3>Matéria</h3>
+        <p>{{form.materia}}</p>
+
+        <h3>Arquivo</h3>
+        <p>  {{form.docfile}} </p>
+
+
+        <div class="d-grid gap-2">
+            <input type="submit" class ="btn btn-primary btn-lg" value="Enviar">
+        </div>
+
+
+
+
+    </form>
+  
+{% endblock content %}
+
