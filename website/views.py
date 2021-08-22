@@ -97,7 +97,7 @@ def login(request):
                 auth_login(request, user)
                 return redirect('menu')
             else:
-                return HttpResponse("Algo deu errado")
+                return redirect('login')
 
     else:
 
@@ -129,7 +129,7 @@ def materia_page(request, id=id):
         return render(request, 'materia.html', context)
 
     else:
-        return render(request, 'erro.html')
+        return redirect('menu')
 
 
 
