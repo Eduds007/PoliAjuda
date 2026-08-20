@@ -11,6 +11,14 @@
 
 ---
 
+## 📸 Demonstração
+
+| Página inicial | Matérias disponíveis |
+| :---: | :---: |
+| ![Página inicial do PoliAjuda](screenshots/pagina-inicial.png) | ![Lista de matérias do PoliAjuda](screenshots/lista-materias.png) |
+
+---
+
 ## ✨ Funcionalidades
 
 - 📂 **Repositório por matéria** — os documentos são agrupados automaticamente pela matéria informada no envio.
